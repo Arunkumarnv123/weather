@@ -1,0 +1,22 @@
+<div class="weather-card" *ngIf="weather" [ngClass]="{'is-day': weather.isDay, 'is-night': !weather.isDay}">
+    <div class="card-header">
+        <h2>{{ weather.city }}</h2>
+        <span class="time">{{ weather.time | date:'shortTime' }}</span>
+    </div>
+
+    <div class="weather-info">
+        <div class="temperature">
+            {{ weather.temperature }}°C
+        </div>
+        <div class="details">
+            <div class="detail-item">
+                <span class="label">Wind</span>
+                <span class="value">{{ weather.windSpeed }} km/h</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">Code</span>
+                <span class="value">{{ weather.weatherCode }}</span>
+            </div>
+        </div>
+    </div>
+</div>
